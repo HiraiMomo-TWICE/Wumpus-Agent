@@ -1,7 +1,10 @@
 import handle_input as handlein
+from tkinter import *
+from PIL import ImageTk, Image
+from sys import agv
 
 if __name__ == '__main__':
-    filename = 'Map1.txt'
+    filename = os.chdir(sys.agv[1])
 
     map_size, maze = handlein.read_file(filename)
 
