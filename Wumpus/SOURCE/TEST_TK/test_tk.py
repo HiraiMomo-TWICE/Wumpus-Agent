@@ -1,11 +1,17 @@
 from tkinter import *
-# from PIL import ImageTk, Image
+from PIL import ImageTk, Image
 
-windows = Tk()  # Create GUI
-windows.title('Wumpus-Agent')
-windows.geometry("1280x720")  # Change resolution
+root = Tk()  # Create GUI
+root.title('Wumpus-Agent')
+root.geometry("1280x720")  # Change resolution
 
-quit_button = Button(None, text = 'EXIT', command = windows.quit)
+C = Canvas(root, bg='blue', height=700, width=1280)
+imagefile = ImageTk.PhotoImage(Image.open('../../ASSET/background.jpg'))
+background_label = Label(root, image = imagefile)
+background_label.place(x = 0, y = 0, relwidth = 1, relheight = 1)
+C.pack()
+
+quit_button = Button(None, text = 'EXIT', command = root.quit)
 quit_button.pack()
 
-windows.mainloop()
+root.mainloop()
